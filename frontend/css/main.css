@@ -1,7 +1,9 @@
 *{
     --60:#ecf1e9;
+    --60-glow:#f3faef;
     --30:#def3fa;
     --10:#1b838c;
+    --10-glow:#289ea9;
 }
 .center{
 
@@ -33,4 +35,45 @@ input[type="submit"], input[type="button"], button
 
 a{
     color: var(--10);
+}
+
+.navbar{
+    background-color: var(--10) !important;
+}
+
+.navbar a{
+    color:var(--60);
+}
+.navbar-toggler-icon{
+    color:white !important;
+}
+
+.navbar .avatar{
+    width:40px;
+    border: 2px solid white;
+}
+
+.navbar button{
+    background-color: var(--10);
+    border:0px;
+    box-shadow: 0px;
+}
+.navbar button:hover, .navbar button:focus, .navbar button:active{
+    background-color: var(--10-glow);
+    border: 0px solid var(--60-glow);
+    box-shadow: 0;
+}
+
+.right-avatar:hover{
+    background-color: white;
+    padding:1px;
+    border-radius: 1px;
+}
+
+.dropdown-menu li a{
+    color:black;
+}
+
+button:hover, a.btn:hover{
+    background-color:var(--10-glow) !important;
 }
