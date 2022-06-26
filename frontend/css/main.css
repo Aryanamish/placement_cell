@@ -1,0 +1,36 @@
+*{
+    --60:#ecf1e9;
+    --30:#def3fa;
+    --10:#1b838c;
+}
+.center{
+
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box
+{
+
+    border: 1px solid black;
+    width: 100%;
+    max-width: 450px;
+    /* background-color: red; */
+    padding: 30px 50px 30px 30px;
+    background-color: var(--30);
+}
+
+input[type="submit"], input[type="button"], button
+{
+    background-color: var(--10);
+    color: white;
+}
+
+a{
+    color: var(--10);
+}

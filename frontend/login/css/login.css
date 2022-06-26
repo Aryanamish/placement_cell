@@ -1,0 +1,23 @@
+.center{
+    background-color: var(--60);
+}
+.login input{
+    /* display: block; */
+    padding: 5px;
+    margin: 10px;
+
+}
+
+
+.login span{
+    margin-left: 10px;
+}
+
+.login a{
+    color: var(--10);
+}
+
+
+
+
+
