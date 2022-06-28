@@ -6,6 +6,11 @@
 
 }
 
+.invalid-feedback{
+    margin-left: 12px;
+    font-weight: 700;
+}
+
 span{
     margin-left: 10px;
 }
