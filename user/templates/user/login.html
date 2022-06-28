@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block load_lib %}
+    <link rel="stylesheet" href="{% static 'user/css/login.css' %}">
+    <script src="{% static 'user/js/login.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="center">
+        <div class="box">
+            <form class="login" action="" method="post">
+                {% csrf_token %}
+                {{ login.username }}
+                {{ login.password }}
+                <label><input type="checkbox"> Remember me</label>
+                <input class="form-control" type="submit" value="Login">
+                <br>
+                <span><a href="{% url 'user:forgot' %}">Forget Password?</a></span>
+                <br>
+                <span>Don't have account? <a href="{% url 'user:signup' %}">Sign Up</a></span>
+            </form>
+        </div>
+    </div>
+{% endblock %}
