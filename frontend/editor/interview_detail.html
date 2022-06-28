@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Experience</title>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../fontawesome/css/all.css" />
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            Experience Oasis 
+          </a>
+          <div class="nav-item dropdown ms-auto right-avatar">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../image/female.png" class="rounded-pill avatar">
+    
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="center">
+        <div class="box">
+            <form action="" method="post">
+                <input type="text" placeholder="Company Name" name="company_name" class="form-control"/>
+                <input name="ctc" type="text" placeholder="CTC" class='form-control'/>
+
+                <select class="form-control" name="rounds">
+                    <option>--Number of Rounds--</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+
+                <label for="oncampus"><input type="checkbox" name="oncampus"> On-Campus</label>
+                <label for="offcampus" style="float:right"><input type="checkbox" name="offcampus"> Off-Campus</label>
+                <br>
+                <label for="internship"><input type="checkbox" name="internship"> Internship</label>
+                <label for="full_time" style="float:right; margin-right:20px;"><input type="checkbox" name="ofcampus"> Full-Time</label>
+                <input type="submit" class="form-control" value="Next" />
+            </form>
+        </div>
+      </div>
+</body>
+</html>

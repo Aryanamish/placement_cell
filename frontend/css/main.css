@@ -18,7 +18,6 @@
 
 .box
 {
-
     border: 1px solid black;
     width: 100%;
     max-width: 450px;
@@ -39,6 +38,7 @@ a{
 
 .navbar{
     background-color: var(--10) !important;
+    z-index:100;
 }
 
 .navbar a{
@@ -77,3 +77,14 @@ a{
 button:hover, a.btn:hover{
     background-color:var(--10-glow) !important;
 }
+
+form input{
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+@media only screen and (max-height: 525px) {
+    .box {
+        margin-top: 100px
+    }
+  }
