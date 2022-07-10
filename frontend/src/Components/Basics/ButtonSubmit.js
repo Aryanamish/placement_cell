@@ -1,11 +1,18 @@
 import React from 'react'
 
-const ButtonSubmit = ({value}) => {
+const ButtonSubmit = ({value, inputName, className}) => {
   return (
     <>
-        <button type="submit" className="btn btn-primary">{value}</button>
+        <button 
+        name={inputName}
+        id={inputName}
+        type="submit" className="btn btn-primary">{value}</button>
     </>
     )
 }
 
+ButtonSubmit.defaultProps = {
+  value: 'Enter Text Here',
+
+}
 export default ButtonSubmit

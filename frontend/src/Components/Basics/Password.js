@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Password = ({placeHolder, label, inputName}) => {
+const Password = ({placeholder, label, inputName}) => {
   return (
     <>
         <label htmlFor={inputName}>{label}</label>
@@ -8,7 +8,7 @@ const Password = ({placeHolder, label, inputName}) => {
           type="password"
           className="form-control" 
           name={inputName}
-          placeholder={placeHolder} />
+          placeholder={placeholder} />
     </>
     )
 }

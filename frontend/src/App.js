@@ -3,12 +3,13 @@ import Input from "./Components/Basics/Input";
 import Password from "./Components/Basics/Password";
 import NavBar from './Components/NavBar';
 import LoginForm from "./Components/LoginForm";
+import SignUp from './Components/SignUp'
 
 function App() {
   return (
     <>
       <NavBar/>
-      <LoginForm/> 
+      <SignUp/>
     </>
   );
 }

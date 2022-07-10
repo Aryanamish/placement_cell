@@ -1,30 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-const Input = ({placeHolder, label, className, inputName}) => {
+
+const Email = ({placeholder, label, className, inputName, type}) => {
   return (
     <>
         <label htmlFor="exampleInputEmail1">{label}</label>
         <input 
-          type="email"
+          type={type}
           aria-describedby="emailHelp"
           className={className} 
           name={inputName}
-          placeholder={placeHolder} />
+          id={inputName}
+          placeholder={placeholder} />
     </>
   )
 }
 
-Input.defaultProps = {
-  placeHolder: "Enter A PlaceHolder Text",
+Email.defaultProps = {
+  placeholder: "Enter A placeholder Text",
   className: 'form-control',
+  type: 'text'
 
 }
 
-Input.propTypes = {
-  placeHolder: PropTypes.string,
+Email.propTypes = {
+  placeholder: PropTypes.string,
   className: PropTypes.string,
   label: PropTypes.string,
   inputName: PropTypes.string.isRequired,
 }
 
-export default Input
+export default Email;

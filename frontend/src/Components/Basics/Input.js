@@ -8,6 +8,7 @@ const Input = ({placeHolder, label, className, inputName, type}) => {
           type={type}
           className={className} 
           name={inputName}
+          id={inputName}
           placeholder={placeHolder} />
     </>
   )
@@ -26,4 +27,4 @@ Input.propTypes = {
   inputName: PropTypes.string.isRequired,
 }
 
-export default Input
+export default Input;
