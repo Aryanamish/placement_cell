@@ -1,8 +1,8 @@
 import React from 'react'
-
 export const Folder = () => {
     const card_style = {
         width: '18rem',
+        // margin: '15px'
     }
   return (
 
