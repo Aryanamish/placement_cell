@@ -7,7 +7,7 @@ import Center from './Basics/Center'
 const LoginForm = () => {
   return (
     <>
-        <Center>
+        <Center border={true}>
             <form method="POST" action="" className='mb-3'>
                 <div className="form-group mb-3">
                     <label htmlFor="username">Enter Your Register Number Or Email ID</label>

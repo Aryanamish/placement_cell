@@ -8,7 +8,7 @@ import Email from './Basics/Email';
 const LoginForm = () => {
   return (
     <>
-        <Center>
+        <Center border={true}>
 
             <form method="POST" action="" className='mb-3'>
                 <div className='row'>
