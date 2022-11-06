@@ -1,0 +1,49 @@
+.title{
+    display:inline-block;
+    font-size: 22px;
+    font-weight: 600;
+}
+.panel{
+    padding:10px 10px;
+    cursor: pointer;
+    width:100%;
+    background-color:rgb(203, 203, 203);
+    position:relative;
+}
+
+.float-right{
+    float:right;
+    display: flex;
+    height:100%;
+    position: absolute;
+    top:0px;
+    right: 50px;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    cursor: pointer;
+    gap:30px;
+        
+}
+.float-right i{
+    padding:10px;
+}
+.float-right i:hover{
+    background-color: rgb(237, 232, 233);
+    padding:10px;
+}
+
+section{
+    margin-bottom:10px;
+}
+.round-collapse{
+    padding:10px;
+    border: 1px solid rgba(103, 103, 103, 0.389);
+    border-top: 0px;
+    border-radius: 0px 0px 3px 3px;
+}
+.round-title{
+    display: flex;
+    justify-content: center;
+
+}

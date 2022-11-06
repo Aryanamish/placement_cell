@@ -1,24 +1,34 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
-# Create your views here.
-from . import forms
+from django.http import JsonResponse
 from django.urls import reverse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.contrib.auth import authenticate, login, logout
+from rest_framework import generics
+from django.middleware.csrf import get_token
 
 
-def login(request):
-    login_form = forms.Login(request.POST or None)
-    if login_form.is_valid():
-        if login_form.login(request):
-            return HttpResponseRedirect(reverse('dashboard:dashboard'))
-    return render(request, 'user/login.html', {'title': 'Login - Page', 'login': login_form})
+def login_user(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return JsonResponse({'loggedIn': True})
+    else:
+        return JsonResponse({'loggedIn': False})
+
+def auth(request):
+    if request.user.is_authenticated:
+        return JsonResponse({'loggedIn': True})
+        
+    return JsonResponse({'loggedIn': False})
 
 
 def signup(request):
-    signup_form = forms.SignUp(request.POST or None)
-    if signup_form.is_valid():
-        if signup_form.save(request):
-            return HttpResponseRedirect(reverse('dashboard:dashboard'))
-    return render(request, 'user/signup.html', {'title': "signup - Page"})
+    return HttpResponse()
 
 
-def forgot(request):
-    return HttpResponse("<h1>This Page is Under Construction")
+def logout_user(request):
+    logout(request)
+    return JsonResponse({'loggedIn': False})

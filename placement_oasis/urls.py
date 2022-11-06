@@ -15,11 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.middleware.csrf import get_token
 from user import views
+
+
+@api_view(['GET'])
+def get_csrf(request):
+    return Response({'csrf': get_token(request)})
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('csrf/', get_csrf),
     path('', include('user.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('jobs/', include('dashboard.urls')),
 
 ]

@@ -1,9 +1,9 @@
 import React from 'react';
-import ButtonSubmit from './Basics/ButtonSubmit';
-import Input from './Basics/Email';
-import Password from './Basics/Password';
-import Center from './Basics/Center';
-import Email from './Basics/Email';
+import ButtonSubmit from '../Basics/ButtonSubmit';
+import Input from '../Basics/Email';
+import Password from '../Basics/Password';
+import Center from '../Basics/Center';
+import Email from '../Basics/Email';
 
 const LoginForm = () => {
   return (
@@ -59,6 +59,7 @@ const LoginForm = () => {
                         </div>
                     </div>
                 </div>
+                <br/>
                 <ButtonSubmit value="Register"/>
 
             </form>

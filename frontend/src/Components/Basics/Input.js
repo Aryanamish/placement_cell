@@ -1,30 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-const Input = ({placeHolder, label, className, inputName, type}) => {
+const Input = (prop) => {
   return (
     <>
-        <label htmlFor="exampleInputEmail1">{label}</label>
-        <input 
-          type={type}
-          className={className} 
-          name={inputName}
-          id={inputName}
-          placeholder={placeHolder} />
+        <input value={prop.value} onChange={e=>prop.setValue(e.target.value)} {...prop} />
     </>
   )
 }
 
 Input.defaultProps = {
-  placeHolder: "Enter A PlaceHolder Text",
   className: 'form-control',
 
 }
 
-Input.propTypes = {
-  placeHolder: PropTypes.string,
-  className: PropTypes.string,
-  label: PropTypes.string,
-  inputName: PropTypes.string.isRequired,
-}
 
 export default Input;

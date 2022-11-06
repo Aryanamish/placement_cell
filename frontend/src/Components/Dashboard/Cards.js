@@ -1,92 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import SingleCard from './SingleCard';
 import Container from '../Basics/Container';
 import Flex from '../Basics/Flex'
+import instance from "../axios";
+import Loading from '../Loading';
 
 
 const Cards = () => {
     // TODO add API call for fetching cards detail
-
-    const [posts, setPost] = React.useState([
-        {
-            slug: 'abc123',
-            title: 'First Job',
-            desc: "This is my interview about google",
-            view_count: '129',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc1',
-            title: 'First Job',
-            desc: "This is my interview about google",
-            view_count: '129',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc2',
-            title: 'First Job',
-            desc: "This is my interview about google",
-            view_count: '129',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc3',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc4',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc5',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc6',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc7',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
-        },
-        {
-            slug: 'abc8',
-            desc: "This is my interview about google",
-            view_count: '129',
-            title: 'First Job',
-            c_name: 'Google',
-            date_posted: '28-06-2022',
+    const [loading, setLoading] = useState(false);
+    const [Post, setPost] = React.useState([]);
+    useEffect(()=>{
+        async function getData(){
+            setLoading(true);
+            const data = await instance.get('jobs/all/');
+            setLoading(false);
+            setPost(data.data);
+            console.log(data.data);
         }
-    ]);
-    
+        getData();
+    }, [])
+    if(loading === true){
+        return (
+            <Loading></Loading>
+        )
+    }
   return (
     <Container>
         <Flex>
 
-        {posts.map((curElem)=>{
+        {Post.map((curElem)=>{
             return (
                 <SingleCard detail={curElem} key={curElem.slug}/>
                 );
