@@ -55,8 +55,8 @@ const LoginForm = ({setLoggedIn}) => {
                     <input onChange={e=>{setPassword(e.target.value)}} value={password}  className="form-control" type='password'  name='password' placeholder="Enter Your Password"/>
                 </div>
                 <div className="form-group form-check">
-                    <input type="checkbox" className="form-check-input" name='remember' />
-                    <label className="form-control form-check-label"  htmlFor="exampleCheck1">Remember Me</label>
+                    {/*<input type="checkbox" className="form-check-input" name='remember' />*/}
+                    {/*<label className="form-control form-check-label"  htmlFor="exampleCheck1">Remember Me</label>*/}
                 </div>
                 <input type={'button'} onClick={login} className="btn btn-primary" value={"Login"} />
             </form>
