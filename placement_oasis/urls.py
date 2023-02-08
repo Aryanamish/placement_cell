@@ -14,22 +14,37 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.middleware.csrf import get_token
 from user import views
-
+from django.shortcuts import render, HttpResponse
+import git
 
 @api_view(['GET'])
 def get_csrf(request):
     return Response({'csrf': get_token(request)})
 
-
+def main(request):
+    return render(request, 'index.html', {})
+    
+def webhook(request):
+    if request.POST:
+        repo = git.Repo('path/to/git_repo')
+        origin = repo.remotes.origin
+        origin.pull()
+        return HttpResponse('Updated PythonAnywhere successfully')
+    else:
+        return HttpResponse('Wrong event type')
+    
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('csrf/', get_csrf),
-    path('', include('user.urls')),
-    path('jobs/', include('dashboard.urls')),
+    path('api/csrf/', get_csrf),
+    path('api/', include('user.urls')),
+    path('api/jobs/', include('dashboard.urls')),
+    path('update_server/', webhook),
+    re_path('.*', main),
 
 ]
+
