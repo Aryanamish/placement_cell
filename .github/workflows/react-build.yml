@@ -18,6 +18,8 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - name: react Build
+      uses: ./frontend   
     - uses: actions/checkout@v3
     - name: React Build ${{ matrix.node-version }}
 
@@ -25,8 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: react Build
-      uses: ./frontend   
+   
     - run: npm ci
     - run: npm run build --if-present
     - name: Push
